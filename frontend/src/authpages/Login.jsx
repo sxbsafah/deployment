@@ -52,7 +52,7 @@ function Log_in() {
 
     try {
       // Try backend authentication first
-      const response = await axios.post("http://localhost:3000/auth/login", {
+      const response = await axios.post("https://deployment-gzty.onrender.com/auth/login", {
         username,
         password,
       });

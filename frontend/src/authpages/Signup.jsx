@@ -103,7 +103,7 @@ function Sign_up() {
 
     try {
       // Try backend registration first
-      const response = await axios.post("http://localhost:3000/auth/register", {
+      const response = await axios.post("https://deployment-gzty.onrender.com/auth/register", {
         username,
         email,
         password,
