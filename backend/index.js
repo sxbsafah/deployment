@@ -14,7 +14,8 @@ const PORT = process.env.PORT || 3000;
 
 
 
-const __dirname = process.cwd();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Body parsing middleware
 app.use(cookieParser());
