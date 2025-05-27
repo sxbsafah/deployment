@@ -6,6 +6,9 @@ import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import roomsRouter from "./routes/rooms.route.js";
 import path from "path"
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
 
 dotenv.config();
 
