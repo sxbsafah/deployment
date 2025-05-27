@@ -32,6 +32,9 @@ if (process.env.NODE_ENV === "prodcution") {
     response.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   })
 }
+app.get("/",(request,response) => {
+  response.send(`the __dirname is : ${__dirname} and the process.env.NODE_ENV Is ${process.env.NODE_ENV === "prodcution"}`)
+})
 // Start server
 const server = app.listen(PORT, async () => {
   try {
