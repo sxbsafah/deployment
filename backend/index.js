@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "prodcution") {
   })
 }
 app.get("/",(request,response) =>{
-  response.send("nigga");
+  response.send(process.env.NODE_ENV);
 })
 // Start server
 const server = app.listen(PORT, async () => {
