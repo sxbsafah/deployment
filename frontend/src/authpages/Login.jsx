@@ -51,7 +51,7 @@ function Log_in() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/auth/login", {
+      const response = await axios.post("https://deployment-gzty.onrender.com/auth/login", {
         username,
         password,
       });

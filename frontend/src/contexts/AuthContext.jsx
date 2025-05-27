@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
           const parsedUser = JSON.parse(storedUser);
           if (parsedUser.token) {
             // Verify token with backend
-            const response = await axios.get('http://localhost:3000/auth/verify', {
+            const response = await axios.get('https://deployment-gzty.onrender.com/auth/verify', {
               headers: {
                 Authorization: `Bearer ${parsedUser.token}`
               }
@@ -42,7 +42,7 @@ export function AuthProvider({ children }) {
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
+      const response = await axios.post('https://deployment-gzty.onrender.com/auth/login', {
         username,
         password
       });
@@ -67,7 +67,7 @@ export function AuthProvider({ children }) {
 
   const signup = async (username, email, password, confirmPassword) => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/register', {
+      const response = await axios.post('https://deployment-gzty.onrender.com/auth/register', {
         username,
         email,
         password,
@@ -88,7 +88,7 @@ export function AuthProvider({ children }) {
   const logout = async () => {
     try {
       if (user?.token) {
-        await axios.post('http://localhost:3000/auth/logout', {}, {
+        await axios.post('https://deployment-gzty.onrender.com/auth/logout', {}, {
           headers: {
             Authorization: `Bearer ${user.token}`
           }
