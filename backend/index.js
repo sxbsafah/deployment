@@ -6,8 +6,6 @@ import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import roomsRouter from "./routes/rooms.route.js";
 import path from "path"
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 
 
 dotenv.config();
@@ -17,8 +15,7 @@ const PORT = process.env.PORT || 3000;
 
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.resolve();
 
 // Body parsing middleware
 app.use(cookieParser());
@@ -29,16 +26,12 @@ app.use("/auth", authRouter);
 app.use("/room", roomsRouter);
 
 if (process.env.NODE_ENV === "prodcution") {
-  console.log("we are here")
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
   app.get("/{*any}", (request,response) => {
     response.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   })
 }
-app.get("/",(request,response) =>{
-  response.send(process.env.NODE_ENV);
-})
 // Start server
 const server = app.listen(PORT, async () => {
   try {
