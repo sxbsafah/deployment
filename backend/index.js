@@ -14,8 +14,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 
+const __dirname = process.cwd();
 
-const __dirname = path.resolve();
 
 // Body parsing middleware
 app.use(cookieParser());
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use("/auth", authRouter);
 app.use("/room", roomsRouter);
 
-if (process.env.NODE_ENV === "prodcution") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
   app.get("/{*any}", (request,response) => {
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "prodcution") {
   })
 }
 app.get("/",(request,response) => {
-  response.send(`the __dirname is : ${__dirname} and the process.env.NODE_ENV Is ${process.env.NODE_ENV === "prodcution"}`)
+  response.send(`the __dirname is : ${__dirname} and the process.env.NODE_ENV Is ${process.env.NODE_ENV}`)
 })
 // Start server
 const server = app.listen(PORT, async () => {
