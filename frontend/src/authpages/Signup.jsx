@@ -109,6 +109,7 @@ function Sign_up() {
         password,
         confirmPassword,
       });
+
       if (response.status === 201) {
         // Store user data in localStorage
         const userData = {

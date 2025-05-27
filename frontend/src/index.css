@@ -10,6 +10,13 @@
   --color-purplefoncehover: oklch(55.31% 0.1153 300.77);
 }
 
+:root {
+  --color-1: #5b209a;
+  --color-2: #18012e;
+  --color-3: #d5c4f7;
+  overflow-x: hidden;
+}
+
 .stars-container {
   position: absolute;
   top: 0;
@@ -60,15 +67,15 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #cab2fb;
+  background: var(--color-1);
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #36135a;
+  background: var(--color-2);
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #220f3d;
+  background: var(--color-3);
 }

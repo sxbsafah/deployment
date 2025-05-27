@@ -73,8 +73,8 @@ const ProfileBar = ({ displayProfileList, setDisplayProfileList }) => {
             initial={{ x: 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 200, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="z-10 fixed top-2 right-2 w-72 bg-[var(--color-1)] text-[var(--color-3)] rounded-lg shadow-lg"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="z-10 fixed top-2 right-2 w-72 bg-[var(--color-1)] text-[var(--color-3)] rounded-lg shadow-lg transition-transform transform translate-x-0"
           >
             <div className="flex justify-start p-2">
               <button

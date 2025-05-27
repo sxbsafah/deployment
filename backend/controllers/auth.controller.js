@@ -34,7 +34,7 @@ export const registerController = async (request, response) => {
         email: process.env.MAIL_TRAP_EMAIL_SENDER,
         name: "ChatBot",
       },
-      to: [{ email: createdUser.email }],
+      to: [{ email: "chatbotusthb2005@gmail.com" }],
       template_uuid: process.env.TEMPLATE_UUID,
       template_variables: {
         username: createdUser.username,

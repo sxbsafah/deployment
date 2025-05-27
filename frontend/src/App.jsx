@@ -8,22 +8,28 @@ import Home from "./pages/Home";
 import ChatPage from "./pages/Chat";
 import Background from "./components/Background";
 import { ThemeProvider } from "./components/ThemeContext";
+import { ChatProvider } from "./components/ChatContext";
 
 function App() {
+  // localStorage.clear();
+
   const location = useLocation();
-  const isHome = location.pathname == "/";
+  const isHome = location.pathname === "/";
 
   return (
     <>
       <ThemeProvider>
-        <Nav />
-        {isHome ? <HomeBackground /> : <Background />}
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/chatpage" element={<ChatPage />} />
-        </Routes>
+        <ChatProvider>
+          <Nav />
+          {isHome ? <HomeBackground /> : <Background />}
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/chatPage" element={<ChatPage />} />
+            <Route path="/chat/:chatId" element={<ChatPage />} />
+          </Routes>
+        </ChatProvider>
       </ThemeProvider>
     </>
   );
