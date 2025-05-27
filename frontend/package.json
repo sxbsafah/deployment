@@ -17,8 +17,7 @@
     "react-dom": "^19.1.0",
     "react-fast-marquee": "^1.6.5",
     "react-router": "^7.3.0",
-    "react-router-dom": "^7.6.1",
-    "refactored-chatbot-api": "file:.."
+    "react-router-dom": "^7.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

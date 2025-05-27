@@ -74,7 +74,7 @@ function Chat() {
         textareaRef.current.style.height = "auto";
       }
 
-      const response = await fetch("https://d272-129-45-21-191.ngrok-free.app", {
+      const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
