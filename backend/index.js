@@ -36,7 +36,9 @@ if (process.env.NODE_ENV === "prodcution") {
     response.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
   })
 }
-
+app.get("/",(request,response) =>{
+  response.send("nigga");
+})
 // Start server
 const server = app.listen(PORT, async () => {
   try {
